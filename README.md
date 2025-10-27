@@ -24,11 +24,17 @@ The system ensures **complete traceability** — every action or status change i
 ### Features Implemented
 
 ✅ JWT-based authentication (Applicant / Admin / Bot)
+
 ✅ CRUD operations for job applications
+
 ✅ Manual and automatic status updates
+
 ✅ Application activity log (with timestamps & comments)
+
 ✅ Secure MongoDB Atlas connection
+
 ✅ Responsive UI built with TailwindCSS
+
 ✅ API integration using Axios
 
 
