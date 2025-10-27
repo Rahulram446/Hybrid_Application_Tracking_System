@@ -97,11 +97,15 @@ project/
 ### Backend Setup
 
 cd backend
+
 cd backend
+
 npm install
+
 npm start
 
 ### Frontend Setup
 
 cd frontend
+
 npm run dev
