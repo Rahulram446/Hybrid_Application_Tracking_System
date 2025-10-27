@@ -128,9 +128,13 @@ The following screenshots illustrate the **Intuitive Dashboards** and clear **Ro
 
 ### 2. User Registeration
 
+This form allows new users to register as an Applicant to submit their interview applications.
+
 <img src="Sign_in.jpeg" alt="Sign Up or Registration form for new applicants" width="750"/>
 
 ### 3. User Login
+
+This is the entry point where all three user types—Applicant, Bot Mimic, and Admin—can access their respective dashboards.
 
 <img src="Login_page.jpeg" alt="Login Page with fields for email and password" width="750"/>
 
