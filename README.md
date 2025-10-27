@@ -110,8 +110,38 @@ npm install
 
 npm start
 
+
 ### Frontend Setup
 
 cd frontend
 
 npm run dev
+
+
+## 🖼️ Application Screenshots (UI/UX)
+
+The following screenshots illustrate the **Intuitive Dashboards** and clear **Role Separation**.
+
+### 1. Home Page
+
+<img src="Home_page.jpeg" alt="Home page with simple navigation" width="750"/>
+
+### 2. Admin Dashboard
+
+The Admin manages manual status updates for non-technical roles and oversees all metrics.
+
+<img src="Admin_Dashboard.jpeg" alt="Admin Dashboard showing job metrics and application management list" width="750"/>
+
+### 3. Applicant Dashboard
+
+The Applicant can track the **status, update history, and comments** for their submitted applications.
+
+<img src="Applicant_Dashboard.jpeg" alt="Applicant Dashboard listing submitted applications and their current status" width="750"/>
+
+### 4. Bot Mimic Interface
+
+This interface simulates automated updates for technical applications, generating **timestamped activity logs** marked "Bot Mimic".
+
+<img src="Bot_Mimic_Dashboard.jpeg" alt="Bot Mimic Dashboard for triggering automated status changes" width="750"/>
+
+
