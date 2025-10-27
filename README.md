@@ -142,6 +142,6 @@ The Applicant can track the **status, update history, and comments** for their s
 
 This interface simulates automated updates for technical applications, generating **timestamped activity logs** marked "Bot Mimic".
 
-<img src="Bot_Mimic_Dashboard.jpeg" alt="Bot Mimic Dashboard for triggering automated status changes" width="750"/>
+<img src="Bot Mimic_Dashboard.jpeg" alt="Bot Mimic Dashboard for triggering automated status changes" width="750"/>
 
 
