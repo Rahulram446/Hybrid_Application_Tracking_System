@@ -1,42 +1,20 @@
-import { Link, useLocation } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
-  const { logout } = useAuth();
-  const location = useLocation();
-
-  const links = [
-    { name: "Home", path: "/dashboard/home" },
-    { name: "Admin", path: "/dashboard/admin" },
-    { name: "Applicant", path: "/dashboard/applicant" },
-    { name: "Form", path: "/dashboard/form" },
-    { name: "Bot", path: "/dashboard/bot" },
-  ];
-
+export default function Navbar() {
   return (
-    <nav className="bg-blue-600 text-white px-8 py-4 flex justify-between items-center shadow-md">
-      <h1 className="text-2xl font-bold">My Dashboard</h1>
-      <div className="flex space-x-6">
-        {links.map((link) => (
-          <Link
-            key={link.path}
-            to={link.path}
-            className={`hover:text-gray-200 ${
-              location.pathname === link.path ? "underline font-semibold" : ""
-            }`}
-          >
-            {link.name}
-          </Link>
-        ))}
-      </div>
-      <button
-        onClick={logout}
-        className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded transition"
-      >
-        Logout
-      </button>
+    <nav style={{
+      background: "#111827",
+      color: "#fff",
+      padding: "1rem",
+      display: "flex",
+      justifyContent: "center",
+      gap: "1.5rem"
+    }}>
+      <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>Login</Link>
+      <Link to="/admin" style={{ color: "#fff", textDecoration: "none" }}>Admin</Link>
+      <Link to="/bot" style={{ color: "#fff", textDecoration: "none" }}>Bot</Link>
+      <Link to="/applicant" style={{ color: "#fff", textDecoration: "none" }}>Applicant</Link>
     </nav>
   );
-};
-
-export default Navbar;
+}

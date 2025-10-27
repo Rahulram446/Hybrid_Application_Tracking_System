@@ -1,21 +1,44 @@
-import express from "express";
-import {
-  submitApplication,
-  getApplications,
-  updateApplicationStatus,
-  deleteApplication,
-} from "../controllers/appController.js";
-import { protect } from "../middleware/authMiddleware.js";
-import { validateApplication, validateStatusUpdate } from "../middleware/validateMiddleware.js";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import AdminDashboard from "./pages/AdminDashboard";
+import ApplicantDashboard from "./pages/ApplicantDashboard";
+import BotDashboard from "./pages/BotDashboard";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
-const router = express.Router();
+const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute roles={["admin"]}>
+            <AdminDashboard />
+          </ProtectedRoute>
+        }
+      />
 
-// Public routes (GET can be public or protected)
-router.get("/", getApplications);
+      <Route
+        path="/applicant"
+        element={
+          <ProtectedRoute roles={["applicant"]}>
+            <ApplicantDashboard />
+          </ProtectedRoute>
+        }
+      />
 
-// Protected routes
-router.post("/", protect, validateApplication, submitApplication);
-router.patch("/:id/status", protect, validateStatusUpdate, updateApplicationStatus);
-router.delete("/:id", protect, deleteApplication);
+      <Route
+        path="/bot"
+        element={
+          <ProtectedRoute roles={["bot"]}>
+            <BotDashboard />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+  );
+};
 
-export default router;
+export default AppRoutes;

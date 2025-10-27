@@ -1,11 +1,11 @@
-// routes/botRoutes.js
+// backend/routes/botRoutes.js
+import express from "express";
+import { runBotMimic } from "../controllers/botMimicController.js";
+import { authMiddleware } from "../middleware/authMiddleware.js";
 
-const express = require("express");
 const router = express.Router();
-const { runBotMimic } = require("../controllers/botMimicController");
-const { verifyToken, verifyRole } = require("../middleware/authMiddleware");
 
-// Route to trigger Bot Mimic manually (only BotMimic role can access)
-router.post("/run", verifyToken, verifyRole(["BotMimic"]), runBotMimic);
+// ✅ Protected route: only bot or admin can run mimic
+router.post("/run", authMiddleware(["bot", "admin"]), runBotMimic);
 
-module.exports = router;
+export default router;

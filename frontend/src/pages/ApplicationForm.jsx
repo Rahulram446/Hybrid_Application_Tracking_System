@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "../api/axios";
+import axios from "../context/axios";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +15,7 @@ export default function ApplicationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/applications/create", form);
+      await axios.post("/applications", form);
       alert("Application submitted successfully!");
       navigate("/");
     } catch (error) {

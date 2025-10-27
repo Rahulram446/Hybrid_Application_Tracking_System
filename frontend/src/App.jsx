@@ -1,43 +1,50 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Navbar from "./components/Navbar";
-
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import Home from "./pages/Home";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage"; // ✅ make sure this line exists
+import AdminDashboard from "./pages/AdminDashboard";
+import ApplicantDashboard from "./pages/ApplicantDashboard";
+import BotDashboard from "./pages/BotDashboard";
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
+    <Router>
+      <AuthProvider>
         <Routes>
-          {/* Redirect root to login */}
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} /> {/* ✅ FIXED */}
 
-          {/* Public routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-
-          {/* Protected routes */}
           <Route
-            path="/dashboard/*"
+            path="/admin"
             element={
-              <ProtectedRoute>
-                <Dashboard />
+              <ProtectedRoute roles={["admin"]}>
+                <AdminDashboard />
               </ProtectedRoute>
             }
           />
-
-          {/* Fallback route */}
           <Route
-            path="*"
-            element={<h1 className="text-center mt-20 text-xl text-red-600">404 - Page Not Found</h1>}
+            path="/applicant"
+            element={
+              <ProtectedRoute roles={["applicant"]}>
+                <ApplicantDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/bot"
+            element={
+              <ProtectedRoute roles={["bot"]}>
+                <BotDashboard />
+              </ProtectedRoute>
+            }
           />
         </Routes>
-      </Router>
-    </AuthProvider>
+      </AuthProvider>
+    </Router>
   );
 }
 
