@@ -126,19 +126,27 @@ The following screenshots illustrate the **Intuitive Dashboards** and clear **Ro
 
 <img src="Home_page.jpeg" alt="Home page with simple navigation" width="750"/>
 
-### 2. Admin Dashboard
+### 2. User Registeration
+
+<img src="Sign_in.jpeg" alt="Sign Up or Registration form for new applicants" width="750"/>
+
+### 3. User Login
+
+<img src="Login_page.jpeg" alt="Login Page with fields for email and password" width="750"/>
+
+### 4. Admin Dashboard
 
 The Admin manages manual status updates for non-technical roles and oversees all metrics.
 
 <img src="Admin_Dashboard.jpeg" alt="Admin Dashboard showing job metrics and application management list" width="750"/>
 
-### 3. Applicant Dashboard
+### 5. Applicant Dashboard
 
 The Applicant can track the **status, update history, and comments** for their submitted applications.
 
 <img src="Applicant_Dashboard.jpeg" alt="Applicant Dashboard listing submitted applications and their current status" width="750"/>
 
-### 4. Bot Mimic Interface
+### 6. Bot Mimic Interface
 
 This interface simulates automated updates for technical applications, generating **timestamped activity logs** marked "Bot Mimic".
 
